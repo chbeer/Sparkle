@@ -51,6 +51,7 @@
 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	FILE *fp = NULL, *cmdFP = NULL;
+	char *oldDestinationString = NULL;
 	
 	SULog(@"Extracting %@ using '%@'",archivePath,command);
     
@@ -60,14 +61,14 @@
 #else
 	NSNumber *fs = [[[NSFileManager defaultManager] attributesOfItemAtPath:archivePath error:nil] objectForKey:NSFileSize];
 #endif
-	if (fs == nil) goto reportError;
+	if (!fs) goto reportError;
 	
 	// Thank you, Allan Odgaard!
 	// (who wrote the following extraction alg.)
 	fp = fopen([archivePath fileSystemRepresentation], "r");
 	if (!fp) goto reportError;
 	
-    char *oldDestinationString = getenv("DESTINATION");
+    oldDestinationString = getenv("DESTINATION");
 	setenv("DESTINATION", [[archivePath stringByDeletingLastPathComponent] fileSystemRepresentation], 1);
 	cmdFP = popen([command fileSystemRepresentation], "w");
 	size_t written;
