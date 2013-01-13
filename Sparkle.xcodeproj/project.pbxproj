@@ -1379,6 +1379,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
 			buildSettings = {
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1386,6 +1387,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941D50D94A70100DD942E /* ConfigFrameworkRelease.xcconfig */;
 			buildSettings = {
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1498,6 +1500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61072EB20DF2640C008FE88B /* ConfigFrameworkReleaseGCSupport.xcconfig */;
 			buildSettings = {
+				SKIP_INSTALL = YES;
 			};
 			name = "Release (GC dual-mode; 10.5+)";
 		};
