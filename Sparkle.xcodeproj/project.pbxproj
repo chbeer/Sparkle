@@ -91,6 +91,8 @@
 		61A2279D0D1CEE7600430CCD /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A2279B0D1CEE7600430CCD /* SUSystemProfiler.m */; };
 		61A354550DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 61A354530DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.h */; settings = {ATTRIBUTES = (); }; };
 		61A354560DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A354540DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.m */; };
+		61B078CE15A5FB6100600039 /* SUCodeSigningVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B078CC15A5FB6100600039 /* SUCodeSigningVerifier.h */; };
+		61B078CF15A5FB6100600039 /* SUCodeSigningVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B078CD15A5FB6100600039 /* SUCodeSigningVerifier.m */; };
 		61B5F8ED09C4CE3C00B25A18 /* SUUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B5F8E309C4CE3C00B25A18 /* SUUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61B5F8EE09C4CE3C00B25A18 /* SUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B5F8E409C4CE3C00B25A18 /* SUUpdater.m */; };
 		61B5F8EF09C4CE3C00B25A18 /* SUPlainInstallerInternals.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B5F8E509C4CE3C00B25A18 /* SUPlainInstallerInternals.m */; };
@@ -350,6 +352,8 @@
 		61A2279B0D1CEE7600430CCD /* SUSystemProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSystemProfiler.m; sourceTree = "<group>"; };
 		61A354530DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUserInitiatedUpdateDriver.h; sourceTree = "<group>"; };
 		61A354540DF113C70076ECB1 /* SUUserInitiatedUpdateDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUserInitiatedUpdateDriver.m; sourceTree = "<group>"; };
+		61B078CC15A5FB6100600039 /* SUCodeSigningVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUCodeSigningVerifier.h; sourceTree = "<group>"; };
+		61B078CD15A5FB6100600039 /* SUCodeSigningVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUCodeSigningVerifier.m; sourceTree = "<group>"; };
 		61B5F8E309C4CE3C00B25A18 /* SUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SUUpdater.h; sourceTree = "<group>"; };
 		61B5F8E409C4CE3C00B25A18 /* SUUpdater.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SUUpdater.m; sourceTree = "<group>"; };
 		61B5F8E509C4CE3C00B25A18 /* SUPlainInstallerInternals.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SUPlainInstallerInternals.m; sourceTree = "<group>"; };
@@ -733,6 +737,8 @@
 			children = (
 				61299A2D09CA2DAB00B7442F /* SUDSAVerifier.h */,
 				61299A2E09CA2DAB00B7442F /* SUDSAVerifier.m */,
+				61B078CC15A5FB6100600039 /* SUCodeSigningVerifier.h */,
+				61B078CD15A5FB6100600039 /* SUCodeSigningVerifier.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -882,6 +888,7 @@
 				6158A1C5137904B300487EC1 /* SUUpdater_Private.h in Headers */,
 				8B887B7E1517F888000BB292 /* SUXPC.h in Headers */,
 				93FB277A156BD80D001937C7 /* SUPasswordPrompt.h in Headers */,
+				61B078CE15A5FB6100600039 /* SUCodeSigningVerifier.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,6 +1309,7 @@
 				55C14F07136EF6DB00649790 /* SULog.m in Sources */,
 				8B887B7F1517F888000BB292 /* SUXPC.m in Sources */,
 				93FB277B156BD80D001937C7 /* SUPasswordPrompt.m in Sources */,
+				61B078CF15A5FB6100600039 /* SUCodeSigningVerifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1512,6 +1520,7 @@
 				);
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INSTALL_PATH = "@rpath";
 			};
 			name = Debug;
 		};
@@ -1526,6 +1535,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				INSTALL_PATH = "@rpath";
 			};
 			name = Release;
 		};
@@ -1589,6 +1599,27 @@
 			};
 			name = Release;
 		};
+		55C14BBD136EEF1500649790 /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1941D40D94A70100DD942E /* ConfigRelaunchRelease.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = finish_installation.pch;
+				INFOPLIST_FILE = "finish_installation-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = finish_installation;
+			};
+			name = "Release (GC dual-mode; 10.5+)";
+		};
 		5D06E8D20FD68C7D005AE3F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D06E8F20FD68D21005AE3F6 /* ConfigBinaryDeltaDebug.xcconfig */;
@@ -1602,6 +1633,50 @@
 			buildSettings = {
 			};
 			name = Release;
+		};
+		5D06E8D40FD68C7D005AE3F6 /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D06E8F30FD68D21005AE3F6 /* ConfigBinaryDeltaRelease.xcconfig */;
+			buildSettings = {
+			};
+			name = "Release (GC dual-mode; 10.5+)";
+		};
+		61072EAD0DF263BD008FE88B /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = "Release (GC dual-mode; 10.5+)";
+		};
+		61072EAE0DF263BD008FE88B /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61072EB20DF2640C008FE88B /* ConfigFrameworkReleaseGCSupport.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				INSTALL_PATH = "@rpath";
+			};
+			name = "Release (GC dual-mode; 10.5+)";
+		};
+		61072EAF0DF263BD008FE88B /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 615409A8103BA09100125AF1 /* ConfigTestAppReleaseGCSupport.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+			};
+			name = "Release (GC dual-mode; 10.5+)";
+		};
+		61072EB10DF263BD008FE88B /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA302AFD109D13190060F891 /* ConfigUnitTestReleaseGCSupport.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+			};
+			name = "Release (GC dual-mode; 10.5+)";
 		};
 		612279DB0DB5470300AB99EA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1659,6 +1734,18 @@
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;
+		};
+		8B887B6D1517F3AC000BB292 /* Release (GC dual-mode; 10.5+) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B887B721517F447000BB292 /* ConfigServiceRelease.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				INFOPLIST_FILE = SandboxService.plist;
+				VALID_ARCHS = x86_64;
+			};
+			name = "Release (GC dual-mode; 10.5+)";
 		};
 /* End XCBuildConfiguration section */
 
