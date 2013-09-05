@@ -1521,6 +1521,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INSTALL_PATH = "@rpath";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1536,6 +1537,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INSTALL_PATH = "@rpath";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
