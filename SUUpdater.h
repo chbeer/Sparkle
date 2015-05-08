@@ -27,12 +27,12 @@
 
 + (SUUpdater *)sharedUpdater;
 + (SUUpdater *)updaterForBundle:(NSBundle *)bundle;
-- initForBundle:(NSBundle *)bundle;
+- (id)initForBundle:(NSBundle *)bundle;
 
 - (NSBundle *)hostBundle;
 
 - (void)setDelegate:(id)delegate;
-- delegate;
+- (id)delegate;
 
 - (void)setAutomaticallyChecksForUpdates:(BOOL)automaticallyChecks;
 - (BOOL)automaticallyChecksForUpdates;
@@ -149,7 +149,7 @@
 #if defined(DEBUG) && DEBUG && 0
 #define SU_MIN_CHECK_INTERVAL 60
 #else
-#define SU_MIN_CHECK_INTERVAL 60*60
+#define SU_MIN_CHECK_INTERVAL 60*15
 #endif
 
 #if defined(DEBUG) && DEBUG && 0
