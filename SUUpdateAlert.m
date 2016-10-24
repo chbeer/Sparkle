@@ -94,7 +94,7 @@
 	// Set the default font	
 	[releaseNotesView setPreferencesIdentifier:[SPARKLE_BUNDLE bundleIdentifier]];
 	[[releaseNotesView preferences] setStandardFontFamily:[[NSFont systemFontOfSize:8] familyName]];
-	[[releaseNotesView preferences] setDefaultFontSize:(int)[NSFont systemFontSizeForControlSize:NSSmallControlSize]];
+	[[releaseNotesView preferences] setDefaultFontSize:(int)[NSFont systemFontSizeForControlSize:NSControlSizeSmall]];
 	[releaseNotesView setFrameLoadDelegate:(id)self];
 	[releaseNotesView setPolicyDelegate:(id)self];
 	
